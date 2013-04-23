@@ -1,0 +1,271 @@
+Chronologic VCS simulator copyright 1991-2005
+Contains Synopsys proprietary information.
+Compiler version Y-2006.06-SP1; Runtime version Y-2006.06-SP1;  Apr 11 19:29 2013
+
+	=========================Register Before Reset======================
+                   0 Register[  0] =          0
+                   0 Register[  1] =          x
+                   0 Register[  2] =          x
+                   0 Register[  3] =          x
+                   0 Register[  4] =          x
+                   0 Register[  5] =          x
+                   0 Register[  6] =          x
+                   0 Register[  7] =          x
+                   0 Register[  8] =          x
+                   0 Register[  9] =          x
+                   0 Register[ 10] =          x
+                   0 Register[ 11] =          x
+                   0 Register[ 12] =          x
+                   0 Register[ 13] =          x
+                   0 Register[ 14] =          x
+                   0 Register[ 15] =          x
+                   0 Register[ 16] =          x
+                   0 Register[ 17] =          x
+                   0 Register[ 18] =          x
+                   0 Register[ 19] =          x
+                   0 Register[ 20] =          x
+                   0 Register[ 21] =          x
+                   0 Register[ 22] =          x
+                   0 Register[ 23] =          x
+                   0 Register[ 24] =          x
+                   0 Register[ 25] =          x
+                   0 Register[ 26] =          x
+                   0 Register[ 27] =          x
+                   0 Register[ 28] =          x
+                   0 Register[ 29] =          x
+                   0 Register[ 30] =          x
+                   0 Register[ 31] =          x
+	=========================End of Register======================
+                   0 Master reset: Reset_L=0 resetCount=         0 Reset_L_Out=x
+                   2 PC=4294967292  Instr: op= x  rs= x  rt= x  rd= x  imm16=    x  funct= x
+
+
+
+	=========================Register After Reset======================
+                  32 Register[  0] =          0
+                  32 Register[  1] =          0
+                  32 Register[  2] =          0
+                  32 Register[  3] =          0
+                  32 Register[  4] =          0
+                  32 Register[  5] =          0
+                  32 Register[  6] =          0
+                  32 Register[  7] =          0
+                  32 Register[  8] =          0
+                  32 Register[  9] =          0
+                  32 Register[ 10] =          0
+                  32 Register[ 11] =          0
+                  32 Register[ 12] =          0
+                  32 Register[ 13] =          0
+                  32 Register[ 14] =          0
+                  32 Register[ 15] =          0
+                  32 Register[ 16] =          0
+                  32 Register[ 17] =          0
+                  32 Register[ 18] =          0
+                  32 Register[ 19] =          0
+                  32 Register[ 20] =          0
+                  32 Register[ 21] =          0
+                  32 Register[ 22] =          0
+                  32 Register[ 23] =          0
+                  32 Register[ 24] =          0
+                  32 Register[ 25] =          0
+                  32 Register[ 26] =          0
+                  32 Register[ 27] =          0
+                  32 Register[ 28] =          0
+                  32 Register[ 29] =          0
+                  32 Register[ 30] =          0
+                  32 Register[ 31] =          0
+	=========================End of Register======================
+
+
+                 100 Master reset: Reset_L=0 resetCount=         1 Reset_L_Out=1
+                 102 PC=         0  Instr: op= x  rs= x  rt= x  rd= x  imm16=    x  funct= x
+
+                 200 Master reset: Reset_L=1 resetCount=         2 Reset_L_Out=1
+                 201 Register: reg[ 0]=         0 reg[10]=         1 register[10]=         1
+                 202 PC=         4  Instr: op= 8  rs= 0  rt=10  rd= 0  imm16=    1  funct= 1
+
+                 300 Master reset: Reset_L=1 resetCount=         0 Reset_L_Out=1
+                 301 Register: reg[ 0]=         0 reg[11]=         2 register[11]=         2
+                 302 PC=         8  Instr: op= 8  rs= 0  rt=11  rd= 0  imm16=    2  funct= 2
+
+                 400 Master reset: Reset_L=1 resetCount=         0 Reset_L_Out=1
+                 401 Register: reg[10]=         1 reg[11]=         2 register[12]=4294967295
+                 402 PC=        12  Instr: op= 0  rs=10  rt=11  rd=12  imm16=24610  funct=34
+
+                 500 Master reset: Reset_L=1 resetCount=         0 Reset_L_Out=1
+                 501 Register: reg[10]=         1 reg[12]=4294967295 register[13]=         2
+                 502 PC=        16  Instr: op= 0  rs=10  rt=12  rd=13  imm16=26659  funct=35
+
+                 600 Master reset: Reset_L=1 resetCount=         0 Reset_L_Out=1
+                 601 Register: reg[10]=         1 reg[12]=4294967295 register[14]=         0
+                 602 PC=        20  Instr: op= 0  rs=10  rt=12  rd=14  imm16=28704  funct=32
+
+                 700 Master reset: Reset_L=1 resetCount=         0 Reset_L_Out=1
+                 701 Register: reg[10]=         1 reg[12]=4294967295 register[15]=         0
+                 702 PC=        24  Instr: op= 0  rs=10  rt=12  rd=15  imm16=30753  funct=33
+
+                 800 Master reset: Reset_L=1 resetCount=         0 Reset_L_Out=1
+                 801 Register: reg[10]=         1 reg[16]=         0 register[16]=         0
+                 802 PC=        28  Instr: op= 9  rs=10  rt=16  rd=31  imm16=65535  funct=63
+
+                 900 Master reset: Reset_L=1 resetCount=         0 Reset_L_Out=1
+                 901 Register: reg[ 0]=         0 reg[ 0]=         0 register[ 0]=         0
+                 902 PC=        32  Instr: op= 0  rs= 0  rt= 0  rd= 0  imm16=    0  funct= 0
+
+                1000 Master reset: Reset_L=1 resetCount=         0 Reset_L_Out=1
+                1002 PC=        36  Instr: op= x  rs= x  rt= x  rd= x  imm16=    x  funct= x
+
+                1100 Master reset: Reset_L=1 resetCount=         0 Reset_L_Out=1
+                1102 PC=        40  Instr: op= x  rs= x  rt= x  rd= x  imm16=    x  funct= x
+
+                1200 Master reset: Reset_L=0 resetCount=         0 Reset_L_Out=1
+                1202 PC=        44  Instr: op= x  rs= x  rt= x  rd= x  imm16=    x  funct= x
+
+                1300 Master reset: Reset_L=0 resetCount=         1 Reset_L_Out=1
+                1302 PC=        48  Instr: op= x  rs= x  rt= x  rd= x  imm16=    x  funct= x
+
+                1400 Master reset: Reset_L=0 resetCount=         2 Reset_L_Out=1
+                1402 PC=        52  Instr: op= x  rs= x  rt= x  rd= x  imm16=    x  funct= x
+
+                1500 Master reset: Reset_L=0 resetCount=         3 Reset_L_Out=1
+                1502 PC=        56  Instr: op= x  rs= x  rt= x  rd= x  imm16=    x  funct= x
+
+                1600 Master reset: Reset_L=0 resetCount=         4 Reset_L_Out=1
+                1602 PC=        60  Instr: op= x  rs= x  rt= x  rd= x  imm16=    x  funct= x
+
+                1700 Master reset: Reset_L=0 resetCount=         5 Reset_L_Out=1
+                1702 PC=        64  Instr: op= x  rs= x  rt= x  rd= x  imm16=    x  funct= x
+
+                1800 Master reset: Reset_L=0 resetCount=         6 Reset_L_Out=1
+                1802 PC=        68  Instr: op= x  rs= x  rt= x  rd= x  imm16=    x  funct= x
+
+                1900 Master reset: Reset_L=0 resetCount=         7 Reset_L_Out=1
+                1902 PC=        72  Instr: op= x  rs= x  rt= x  rd= x  imm16=    x  funct= x
+
+                2000 Master reset: Reset_L=0 resetCount=         8 Reset_L_Out=1
+                2002 PC=        76  Instr: op= x  rs= x  rt= x  rd= x  imm16=    x  funct= x
+
+                2100 Master reset: Reset_L=0 resetCount=         9 Reset_L_Out=1
+                2102 PC=        80  Instr: op= x  rs= x  rt= x  rd= x  imm16=    x  funct= x
+
+                2200 Master reset: Reset_L=1 resetCount=        10 Reset_L_Out=1
+                2202 PC=        84  Instr: op= x  rs= x  rt= x  rd= x  imm16=    x  funct= x
+
+	=========================Register Before Reset======================
+                2300 Register[  0] =          0
+                2300 Register[  1] =          0
+                2300 Register[  2] =          0
+                2300 Register[  3] =          0
+                2300 Register[  4] =          0
+                2300 Register[  5] =          0
+                2300 Register[  6] =          0
+                2300 Register[  7] =          0
+                2300 Register[  8] =          0
+                2300 Register[  9] =          0
+                2300 Register[ 10] =          1
+                2300 Register[ 11] =          2
+                2300 Register[ 12] = 4294967295
+                2300 Register[ 13] =          2
+                2300 Register[ 14] =          0
+                2300 Register[ 15] =          0
+                2300 Register[ 16] =          0
+                2300 Register[ 17] =          0
+                2300 Register[ 18] =          0
+                2300 Register[ 19] =          0
+                2300 Register[ 20] =          0
+                2300 Register[ 21] =          0
+                2300 Register[ 22] =          0
+                2300 Register[ 23] =          0
+                2300 Register[ 24] =          0
+                2300 Register[ 25] =          0
+                2300 Register[ 26] =          0
+                2300 Register[ 27] =          0
+                2300 Register[ 28] =          0
+                2300 Register[ 29] =          0
+                2300 Register[ 30] =          0
+                2300 Register[ 31] =          0
+	=========================End of Register======================
+                2300 Master reset: Reset_L=1 resetCount=         0 Reset_L_Out=0
+                2302 PC=4294967292  Instr: op= x  rs= x  rt= x  rd= x  imm16=    x  funct= x
+
+
+
+	=========================Register After Reset======================
+                2332 Register[  0] =          0
+                2332 Register[  1] =          0
+                2332 Register[  2] =          0
+                2332 Register[  3] =          0
+                2332 Register[  4] =          0
+                2332 Register[  5] =          0
+                2332 Register[  6] =          0
+                2332 Register[  7] =          0
+                2332 Register[  8] =          0
+                2332 Register[  9] =          0
+                2332 Register[ 10] =          0
+                2332 Register[ 11] =          0
+                2332 Register[ 12] =          0
+                2332 Register[ 13] =          0
+                2332 Register[ 14] =          0
+                2332 Register[ 15] =          0
+                2332 Register[ 16] =          0
+                2332 Register[ 17] =          0
+                2332 Register[ 18] =          0
+                2332 Register[ 19] =          0
+                2332 Register[ 20] =          0
+                2332 Register[ 21] =          0
+                2332 Register[ 22] =          0
+                2332 Register[ 23] =          0
+                2332 Register[ 24] =          0
+                2332 Register[ 25] =          0
+                2332 Register[ 26] =          0
+                2332 Register[ 27] =          0
+                2332 Register[ 28] =          0
+                2332 Register[ 29] =          0
+                2332 Register[ 30] =          0
+                2332 Register[ 31] =          0
+	=========================End of Register======================
+
+
+                2400 Master reset: Reset_L=1 resetCount=         0 Reset_L_Out=1
+                2402 PC=         0  Instr: op= x  rs= x  rt= x  rd= x  imm16=    x  funct= x
+
+                2500 Master reset: Reset_L=1 resetCount=         0 Reset_L_Out=1
+                2501 Register: reg[ 0]=         0 reg[10]=         1 register[10]=         1
+                2502 PC=         4  Instr: op= 8  rs= 0  rt=10  rd= 0  imm16=    1  funct= 1
+
+                2600 Master reset: Reset_L=1 resetCount=         0 Reset_L_Out=1
+                2601 Register: reg[ 0]=         0 reg[11]=         2 register[11]=         2
+                2602 PC=         8  Instr: op= 8  rs= 0  rt=11  rd= 0  imm16=    2  funct= 2
+
+                2700 Master reset: Reset_L=1 resetCount=         0 Reset_L_Out=1
+                2701 Register: reg[10]=         1 reg[11]=         2 register[12]=4294967295
+                2702 PC=        12  Instr: op= 0  rs=10  rt=11  rd=12  imm16=24610  funct=34
+
+                2800 Master reset: Reset_L=1 resetCount=         0 Reset_L_Out=1
+                2801 Register: reg[10]=         1 reg[12]=4294967295 register[13]=         2
+                2802 PC=        16  Instr: op= 0  rs=10  rt=12  rd=13  imm16=26659  funct=35
+
+                2900 Master reset: Reset_L=1 resetCount=         0 Reset_L_Out=1
+                2901 Register: reg[10]=         1 reg[12]=4294967295 register[14]=         0
+                2902 PC=        20  Instr: op= 0  rs=10  rt=12  rd=14  imm16=28704  funct=32
+
+                3000 Master reset: Reset_L=1 resetCount=         0 Reset_L_Out=1
+                3001 Register: reg[10]=         1 reg[12]=4294967295 register[15]=         0
+                3002 PC=        24  Instr: op= 0  rs=10  rt=12  rd=15  imm16=30753  funct=33
+
+                3100 Master reset: Reset_L=1 resetCount=         0 Reset_L_Out=1
+                3101 Register: reg[10]=         1 reg[16]=         0 register[16]=         0
+                3102 PC=        28  Instr: op= 9  rs=10  rt=16  rd=31  imm16=65535  funct=63
+
+                3200 Master reset: Reset_L=1 resetCount=         0 Reset_L_Out=1
+                3201 Register: reg[ 0]=         0 reg[ 0]=         0 register[ 0]=         0
+                3202 PC=        32  Instr: op= 0  rs= 0  rt= 0  rd= 0  imm16=    0  funct= 0
+
+                3300 Master reset: Reset_L=1 resetCount=         0 Reset_L_Out=1
+                3302 PC=        36  Instr: op= x  rs= x  rt= x  rd= x  imm16=    x  funct= x
+
+$finish at simulation time                 3311
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 3311
+CPU Time:      0.160 seconds;       Data structure size:   0.0Mb
+Thu Apr 11 19:29:50 2013

@@ -1,0 +1,6 @@
+TODO
+===========
+- Global reset
+- Data out -> what to show?!?
+- Stop PC from executing after it ends?
+- Report
