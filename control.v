@@ -8,7 +8,7 @@ module MainControl (opCode, ALUSrcBWire, RegDstWire, RegWriteWire);
 
     always @(opCode) begin
         case (opCode)
-            // add, sub, addu, subu
+            // add, sub, addu, subu, and, or, xor
             `OPCODE_R_type :
                             begin
                                 ALUSrcB = 0;
@@ -23,6 +23,24 @@ module MainControl (opCode, ALUSrcBWire, RegDstWire, RegWriteWire);
                           end
             // addiu
             `OPCODE_ADDIU : begin
+                             ALUSrcB = 1;
+                             RegWrite = 1;
+                             RegDst = 0;
+                           end
+            // ANDI
+            `OPCODE_ANDI : begin
+                             ALUSrcB = 1;
+                             RegWrite = 1;
+                             RegDst = 0;
+                           end
+            // ORI
+            `OPCODE_ORI : begin
+                             ALUSrcB = 1;
+                             RegWrite = 1;
+                             RegDst = 0;
+                           end
+            // XORI
+            `OPCODE_XORI : begin
                              ALUSrcB = 1;
                              RegWrite = 1;
                              RegDst = 0;

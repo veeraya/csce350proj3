@@ -122,11 +122,11 @@ module testCPU(Reset_L, startPC, testData);
       Reset_L = 0;  startPC = 0 * 4;
       #101 // insures reset is asserted across negative clock edge
      Reset_L = 1;
-      #1500; // allow enough time for program 1 to run to completion
+      #1300; // allow enough time for program 1 to run to completion
       Reset_L = 0;
       #1010 // reset
       Reset_L = 1;
-      #1500;
+      #1800;
       // Your program 2
       //startPC = 14 * 4;
       //#101 Reset_L = 1;
