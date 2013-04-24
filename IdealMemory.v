@@ -8,13 +8,13 @@ module InstrMem (Mem_Addr, Dout);
 
    parameter T_rd = 10;
    parameter MemSize = 1024, WordSize = 32;
-   
+
    input  [WordSize-1:0] Mem_Addr;
    output [WordSize-1:0] Dout;
    reg [WordSize-1:0] Dout;
-   
-   reg [WordSize-1:0] 	 Mem[0:MemSize-1];   // register array (SRAM) 
-   
+
+   reg [WordSize-1:0] 	 Mem[0:MemSize-1];   // register array (SRAM)
+
    //`include "imeminit.v"
    // Include your test program file here instead of "imeminit.v"
     `include "imeminit_simple_test.v"
@@ -34,23 +34,23 @@ module DataMem (Mem_Addr, CLK, Mem_rd, Mem_wr, Mem_DIN, Mem_DOUT);
    input [WordSize-1:0] Mem_DIN;
    output [WordSize-1:0] Mem_DOUT;
    reg [WordSize-1:0] 	 Mem_DOUT;
-   
+
    reg [WordSize-1:0] 	 Mem[0:MemSize-1];
    integer 		 i;
-   
+
    `include "dmeminit.v"
-      
+
    always @( Mem_Addr or Mem_rd )
 	 if ( ~Mem_wr && Mem_rd )
 	    Mem_DOUT <=  #T_rd Mem[Mem_Addr >> 2];
 
-   
+
    always @(negedge CLK)
      if (Mem_wr == 1)
 	 begin
-	    // $display ($time, " . . . ", ..., Mem_DIN); 
+	    // $display ($time, " . . . ", ..., Mem_DIN);
 	    Mem[Mem_Addr >> 2] <= #T_wr Mem_DIN;
 	 end
 
-   
+
 endmodule // Dmem

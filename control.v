@@ -13,19 +13,19 @@ module MainControl (opCode, ALUSrcBWire, RegDstWire, RegWriteWire);
                             begin
                                 ALUSrcB = 0;
                                 RegWrite = 1;
-                                RegDst = 0;
+                                RegDst = 1;
                              end
             // addi
             `OPCODE_ADDI : begin
                             ALUSrcB = 1;
                             RegWrite = 1;
-                            RegDst = 1;
+                            RegDst = 0;
                           end
             // addiu
             `OPCODE_ADDIU : begin
                              ALUSrcB = 1;
                              RegWrite = 1;
-                             RegDst = 1;
+                             RegDst = 0;
                            end
             default: begin
                         ALUSrcB = 0;
@@ -39,11 +39,6 @@ module MainControl (opCode, ALUSrcBWire, RegDstWire, RegWriteWire);
     assign RegWriteWire = RegWrite;
     assign RegDstWire = RegDst;
 endmodule
-
-`define FUNCT_ADD 6'h20
-`define FUNCT_ADDU 6'h21
-`define FUNCT_SUB 6'h22
-`define FUNCT_SUBU 6'h23
 
 
 module ALUControl(opCode, funct, ALUOp);
@@ -60,13 +55,22 @@ module ALUControl(opCode, funct, ALUOp);
                         `FUNCT_ADDU : ALUOpReg = `ADDU;
                         `FUNCT_SUB : ALUOpReg = `SUB;
                         `FUNCT_SUBU : ALUOpReg = `SUBU;
+                        `FUNCT_AND : ALUOpReg = `AND;
+                        `FUNCT_OR : ALUOpReg = `OR;
+                        `FUNCT_XOR : ALUOpReg = `XOR;
+                        `FUNCT_SLL : ALUOpReg = `SLL;
+                        `FUNCT_SRA : ALUOpReg = `SRA;
+                        `FUNCT_SRL : ALUOpReg = `SRL;
+
                         default : ALUOpReg = `NOP;
                     endcase
                 end
             `OPCODE_ADDI : ALUOpReg = `ADD;
             `OPCODE_ADDIU : ALUOpReg = `ADDU;
-            `OPCODE_SUB : ALUOpReg = `SUB;
-            `OPCODE_SUBU : ALUOpReg = `SUBU;
+            `OPCODE_ANDI : ALUOpReg = `AND;
+            `OPCODE_ORI : ALUOpReg = `OR;
+            `OPCODE_XORI : ALUOpReg = `XOR;
+
             default : ALUOpReg = `NOP;
         endcase
     end

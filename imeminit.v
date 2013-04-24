@@ -5,7 +5,7 @@
 // NOTE:  Expanded these tests to cover all instructions supported by your datapath //
 
 initial	begin
-// 
+//
 // Test Program 1 - Sums the elements of array A[]
 //
    Mem[0] = {6'd0,5'd0,5'd0,5'd5,5'd0,6'd32};
@@ -33,9 +33,9 @@ initial	begin
    Mem[11] = {6'd43,5'd2,5'd5,16'd8};
    //		done:	sw	$5, 8($2)	# store the sum in DMem[5]
    Mem[12] = {6'd0,5'd0,5'd0,16'd0};
-   //			nop			# 
+   //			nop			#
    Mem[13] = {6'd0,5'd0,5'd0,16'd0};
-   //			nop			# 
+   //			nop			#
    //
    // Test Program 2
    //
@@ -45,7 +45,7 @@ initial	begin
    //			sub	$2, $0, $1	# $2 = -1
    Mem[16] = {6'd0,5'd2,5'd0,5'd5,5'd0,6'd42};
    //			slt	$5, $2, $0	# $5 = 1
-   Mem[17] = {6'd0,5'd1,5'd5,5'd6,5'd0,6'd32};     
+   Mem[17] = {6'd0,5'd1,5'd5,5'd6,5'd0,6'd32};
    //			add	$6, $1, $5      # $6 = 2
    Mem[18] = {6'd0,5'd5,5'd6,5'd7,5'd0,6'd37};
    //			or	$7, $5, $6	# $7 = 3
