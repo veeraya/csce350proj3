@@ -47,7 +47,7 @@ module SingleCycleProc(CLK, Reset_L, startPC, dmemOut);
    input [31:0] startPC;
    output [31:0] dmemOut;
    wire [31:0] PC, instruction, ALUOut, busA, busB, B, imm32;
-   wire ALUSrcB, RegDst, RegWrite, ALUOverflow, zero, carryOut, masterReset;
+   wire ALUSrcB, RegDst, RegWrite, ALUOverflow, zero, carryOut, masterReset, nPC_Sel;
    wire [3:0] ALUOp;
    wire [4:0] Rw, Ra, Rb;
    wire [15:0] imm16;
@@ -59,9 +59,9 @@ module SingleCycleProc(CLK, Reset_L, startPC, dmemOut);
 
    MasterReset rst(CLK, Reset_L,masterReset);
    MUX32_2to1 BSelect(busB, imm32, ALUSrcB, B);
-   ProgramCounter pcMod(CLK, masterReset, startPC, imm32,zero, PC);
+   ProgramCounter pcMod(CLK, masterReset, startPC, imm32, nPC_Sel, zero, PC);
    InstrMem instrMemBlk(PC, instruction);
-   MainControl controlUnit(instruction[31:26], instruction[5:0], ALUSrcB, RegDst, RegWrite);
+   MainControl controlUnit(instruction[31:26], instruction[5:0], ALUSrcB, RegDst, RegWrite, nPC_Sel);
    MUX5_2to1 regDstMux(instruction[20:16], instruction[15:11],RegDst, Rw);
    ALUControl aluControlUnit(instruction[31:26], instruction[5:0], ALUOp);
    Register register(CLK, masterReset, Ra, Rb, Rw, ALUOut, RegWrite, busA, busB);
@@ -122,12 +122,12 @@ module testCPU(Reset_L, startPC, testData);
       // Your program 1
       Reset_L = 0;  startPC = 0 * 4;
       #101 // insures reset is asserted across negative clock edge
-     Reset_L = 1;
-      #1300; // allow enough time for program 1 to run to completion
-      Reset_L = 0;
-      #1010 // reset
       Reset_L = 1;
-      #1800;
+      #5000; // allow enough time for program 1 to run to completion
+      // Reset_L = 0;
+      // #1010 // reset
+      // Reset_L = 1;
+      // #1800;
       // Your program 2
       //startPC = 14 * 4;
       //#101 Reset_L = 1;
