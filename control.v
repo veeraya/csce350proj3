@@ -51,6 +51,16 @@ module MainControl (opCode, funct, ALUSrcBWire, RegDstWire, RegWriteWire);
                              RegWrite = 1;
                              RegDst = 0;
                            end
+            `OPCODE_SLTI : begin
+                             ALUSrcB = 1;
+                             RegWrite = 1;
+                             RegDst = 0;
+                           end
+            `OPCODE_SLTIU : begin
+                             ALUSrcB = 1;
+                             RegWrite = 1;
+                             RegDst = 0;
+                            end
             default: begin
                         ALUSrcB = 0;
                         RegWrite = 0;
@@ -85,6 +95,8 @@ module ALUControl(opCode, funct, ALUOp);
                         `FUNCT_SLL : ALUOpReg = `SLL;
                         `FUNCT_SRA : ALUOpReg = `SRA;
                         `FUNCT_SRL : ALUOpReg = `SRL;
+                        `FUNCT_SLT : ALUOpReg = `SLT;
+                        `FUNCT_SLTU : ALUOpReg = `SLTU;
 
                         default : ALUOpReg = `NOP;
                     endcase
@@ -94,6 +106,8 @@ module ALUControl(opCode, funct, ALUOp);
             `OPCODE_ANDI : ALUOpReg = `AND;
             `OPCODE_ORI : ALUOpReg = `OR;
             `OPCODE_XORI : ALUOpReg = `XOR;
+            `OPCODE_SLTI : ALUOpReg = `SLT;
+            `OPCODE_SLTIU : ALUOpReg = `SLTU;
 
             default : ALUOpReg = `NOP;
         endcase

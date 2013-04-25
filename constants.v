@@ -62,3 +62,5 @@
 `define FUNCT_SLL 6'h00
 `define FUNCT_SRA 6'h3
 `define FUNCT_SRL 6'h2
+`define FUNCT_SLT 6'h2a
+`define FUNCT_SLTU 6'h2b

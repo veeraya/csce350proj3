@@ -25,7 +25,7 @@ initial begin
    Mem[11] = {32'h014b6026};
 //            xor    $12, $10, $11    # $12 = 3
    Mem[12] = {32'h394c0012};
-//            xori   $12, $10, 18     # $12 = 19
+//            xori   $12, $10, 18     # $12 = 19 
 
    Mem[13] = {32'h000a6040};
 //            sll    $12, $10, 1      # $12 = 2
@@ -44,7 +44,7 @@ initial begin
 //            slti   $12, $10, -16    # $12 = 0
    Mem[20] = {32'h2d4cfff0};
 //            sltiu  $12, $10, -16    # $12 = 1
-
+/*
    Mem[21] = {6'd4,5'd10,5'd11,-16'd5};
 //            beq    $10, $11, Nojump
    Mem[22] = {6'd4,5'd10,5'd10,16'd2};
@@ -67,5 +67,5 @@ initial begin
 //            addi   $12, $0, 1       # never executed
    Mem[30] = {6'd8,5'd0,5'd12,16'd1};
 //            addi   $12, $0, 1       # never executed
-
+*/
 end

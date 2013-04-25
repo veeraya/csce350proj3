@@ -17,7 +17,7 @@ module InstrMem (Mem_Addr, Dout);
 
    //`include "imeminit.v"
    // Include your test program file here instead of "imeminit.v"
-    `include "imeminit_simple_test.v"
+    `include "imeminit_test.v"
 always
       #T_rd assign  Dout = Mem[ Mem_Addr >> 2 ];
 endmodule // Imem
