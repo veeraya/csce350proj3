@@ -29,10 +29,16 @@ initial begin
 
    Mem[13] = {32'h000a6040};
 //            sll    $12, $10, 1      # $12 = 2
+//  op      rs    rt    rd  shamt funct
+// 000000 00000 01010 01100 00001 000000
+
    Mem[14] = {32'h200dffff};
 //            addi   $13, $0, -1      # $13 = ffffffff=-1
    Mem[15] = {32'h000d6043};
 //            sra    $12, $13, 1      # $12 = ffffffff=-1
+//  op      rs    rt    rd  shamt funct
+// 000000 00000 01101 01100 00001 000011
+
    Mem[16] = {32'h000d6042};
 //            srl    $12, $13, 1      # $12 = 7fffffff
 

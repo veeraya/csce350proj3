@@ -1,5 +1,4 @@
 TODO
 ===========
 - srl funct and opcode is both 0. conflicts with no op!! (all zeroes). give error. maybe we can just take out srl since it's not tested ha!
-- continue doing other part first. (branch and memory)
-- doing compare
+- doing jump
