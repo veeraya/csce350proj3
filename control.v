@@ -70,6 +70,12 @@ module MainControl (opCode, funct, ALUSrcBWire, RegDstWire, RegWriteWire, nPC_Se
                              RegDst = 0;
                              nPC_Sel = 0;
                             end
+            `OPCODE_BEQ : begin
+                             ALUSrcB = 0;
+                             RegWrite = 1;
+                             RegDst = 0;
+                             nPC_Sel = 1;
+                           end
             default: begin
                         ALUSrcB = 0;
                         RegWrite = 0;
@@ -118,6 +124,7 @@ module ALUControl(opCode, funct, ALUOp);
             `OPCODE_XORI : ALUOpReg = `XOR;
             `OPCODE_SLTI : ALUOpReg = `SLT;
             `OPCODE_SLTIU : ALUOpReg = `SLTU;
+            `OPCODE_BEQ : ALUOpReg = `SUB;
 
             default : ALUOpReg = `NOP;
         endcase

@@ -52,7 +52,7 @@ initial begin
 //            slti   $12, $10, -16    # $12 = 0
    Mem[20] = {32'h2d4cfff0};
 //            sltiu  $12, $10, -16    # $12 = 1
-/*
+
    Mem[21] = {6'd4,5'd10,5'd11,-16'd5};
 //            beq    $10, $11, Nojump
    Mem[22] = {6'd4,5'd10,5'd10,16'd2};
@@ -61,8 +61,8 @@ initial begin
 //            addi   $12, $0, 1       # never executed
    Mem[24] = {6'd8,5'd0,5'd12,16'd1};
 //            addi   $12, $0, 1       # never executed
-
-   Mem[25] = {6'd5,5'd10,5'd11,16'd2};
+   Mem[25] = {6'd8,5'd0,5'd12,16'd100};
+   //Mem[25] = {6'd5,5'd10,5'd11,16'd2};
 //  Jump:     bne    $10, $11, Lessthan
    Mem[26] = {6'd8,5'd0,5'd12,16'd1};
 //            addi   $12, $0, 1       # never executed
@@ -75,5 +75,5 @@ initial begin
 //            addi   $12, $0, 1       # never executed
    Mem[30] = {6'd8,5'd0,5'd12,16'd1};
 //            addi   $12, $0, 1       # never executed
-*/
+
 end

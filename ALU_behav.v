@@ -44,6 +44,8 @@ module ALU_behav( ADin, BDin, ALU_ctr, Result, Overflow, Carry_in, Carry_out, Ze
 	      {Carry_out, Result} = ADin - BDin;
 	      Overflow = ADin[n-1] & ~BDin[n-1] & Result[n-1]
 			 | ~ADin[n-1] & BDin[n-1] & ~Result[n-1];
+          $display("SUB:- [%d] tmp = %d [%b]; Result = %d Cout=%b, Ovf=%b; A=%d, B=%d",
+             $time, tmp, tmp, Result, Carry_out, Overflow, ADin, BDin );
 	   end
 	   `SUBU: {Overflow, Result} = ADin - BDin;
 	   `SLT:  begin
@@ -83,6 +85,9 @@ module ALU_behav( ADin, BDin, ALU_ctr, Result, Overflow, Carry_in, Carry_out, Ze
 	 endcase
 
 	 Zero = ~| Result;  // Result = 32'b0
+    if (ALU_ctr == `SUB) begin
+       $display("Result = %d zero = %d", Result, Zero);
+    end
       end
 endmodule
 

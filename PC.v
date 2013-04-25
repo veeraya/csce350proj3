@@ -15,7 +15,7 @@ module ProgramCounter(CLK, MasterReset_L, startPC, imm32, nPC_Sel, zero, PC);
 	and andGate(PCSel, zero, nPC_Sel);
 	MUX32_2to1 pcMux(pc0, pc1, PCSel, selectedPC);
 	AdderFour addFour(pc0, PC, 4);
-	AdderImm addImm(pc1, PC, imm32);
+	AdderImm addImm(pc1, pc0, imm32); // change this to bit shift later!
 
 	always @(negedge CLK) begin
 		if (!initialized) begin
@@ -26,6 +26,7 @@ module ProgramCounter(CLK, MasterReset_L, startPC, imm32, nPC_Sel, zero, PC);
 		end else begin
 			PC = startPC;
 		end
+	$display($time,"nPC_Sel = %d zero = %d", nPC_Sel, zero);
 	$display($time," PC: startPC = %d pc0 = %d, pc1 = %d, PCSel = %d, PC = %d", startPC, pc0, pc1, PCSel, PC);
 	end
 endmodule
