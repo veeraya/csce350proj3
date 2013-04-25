@@ -14,7 +14,7 @@ module Register (CLK, MasterReset_L, readReg1, readReg2, writeReg, writeData, Re
    always @(negedge CLK) begin
       if (MasterReset_L) begin
          if (RegWrite) begin
-            #1 register[writeReg] = writeData;
+            register[writeReg] = writeData;
             $display($time," Register: reg[%d]=%d reg[%d]=%d register[%d]=%d", readReg1, register[readReg1], readReg2,register[readReg2], writeReg, writeData);
          end
       end else begin
@@ -25,7 +25,7 @@ module Register (CLK, MasterReset_L, readReg1, readReg2, writeReg, writeData, Re
          $display("\t=========================End of Register======================");
          // reset
          for (i=0; i < 32; i = i + 1) begin
-            #1 register[i] = 0;
+            register[i] = 0;
          end 
          $display("\n\n\t=========================Register After Reset======================"); 
          for (i=0; i < 32; i = i + 1) begin

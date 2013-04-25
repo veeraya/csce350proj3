@@ -12,19 +12,19 @@ module MasterReset(CLK, Reset_L, Reset_L_Out);
 	    $display($time, " Master reset: Reset_L=%d resetCount=%d Reset_L_Out=%d", Reset_L, resetCount, Reset_L_Out);
 		if (Reset_L) begin
 			if (resetFlag) begin
-				#20 Reset_L_Out = 0;
-				#20 resetCount = 0;
-            	#20 resetFlag = 0;
+			   Reset_L_Out = 0;
+			   resetCount = 0;
+               resetFlag = 0;
 			end else begin
-				#20 Reset_L_Out = 1;
-				#20 resetCount = 0;
+			   Reset_L_Out = 1;
+			   resetCount = 0;
 			end
 		end else begin
-			#20 Reset_L_Out = 1;
-			#20 resetCount = resetCount + 1;
+		   Reset_L_Out = 1;
+		   resetCount = resetCount + 1;
 			// resetCount >= 10
 			if (resetCount >= 32'b1010) begin
-            	#20 resetFlag = 1;
+               resetFlag = 1;
          	end 
 		end
 	end

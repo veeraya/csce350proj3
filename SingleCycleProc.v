@@ -11,6 +11,7 @@
 `include "signextend.v"
 `include "MasterReset.v"
 `include "PC.v"
+`include "adder.v"
 /*-------------------------- CPU -------------------------------
  * This module implements a single-cycle
  * CPU similar to that described in the text book
@@ -57,14 +58,14 @@ module SingleCycleProc(CLK, Reset_L, startPC, dmemOut);
    assign imm16 = instruction[15:0];
 
    MasterReset rst(CLK, Reset_L,masterReset);
-   ProgramCounter pcMod(CLK, masterReset, startPC, PC);
+   MUX32_2to1 BSelect(busB, imm32, ALUSrcB, B);
+   ProgramCounter pcMod(CLK, masterReset, startPC, imm32,zero, PC);
    InstrMem instrMemBlk(PC, instruction);
    MainControl controlUnit(instruction[31:26], instruction[5:0], ALUSrcB, RegDst, RegWrite);
    MUX5_2to1 regDstMux(instruction[20:16], instruction[15:11],RegDst, Rw);
    ALUControl aluControlUnit(instruction[31:26], instruction[5:0], ALUOp);
    Register register(CLK, masterReset, Ra, Rb, Rw, ALUOut, RegWrite, busA, busB);
    SIGN_EXTEND extender(imm16, imm32);
-   MUX32_2to1 BSelect(busB, imm32, ALUSrcB, B);
    ALU_behav alu(busA, B, ALUOp, ALUOut, ALUOverflow, 1'b0, carryOut, zero);
 
 //
