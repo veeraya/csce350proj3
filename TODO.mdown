@@ -1,3 +1,5 @@
 TODO
 ===========
 - right now i want to implement the shift left & right. maybe add shift and mux to ALUSrcB?
+
+-- srl funct and opcode is both 0. conflicts with no op!! (all zeroes). give error. maybe we can just take out srl since it's not tested ha!

@@ -32,6 +32,7 @@ module ALU_behav( ADin, BDin, ALU_ctr, Result, Overflow, Carry_in, Carry_out, Ze
 
    always @(ALU_ctr or ADin or BDin or Carry_in)
      begin
+         $display("ALU_ctr = %d", ALU_ctr);
 	 case(ALU_ctr)
 	   `ADD:  begin
 	      {Carry_out, Result} = ADin + BDin + Carry_in;
@@ -63,9 +64,18 @@ module ALU_behav( ADin, BDin, ALU_ctr, Result, Overflow, Carry_in, Carry_out, Ze
 	      Result = Carry_out;
 	      $display("SLTU:+R=%d [%b]", Result, Result );
 	   end
-      `SLL:  Result = ADin << BDin;
-      `SRA:  Result = ADin >>> BDin;
-      `SRL:  Result = ADin >> BDin;
+      `SLL:  begin
+         Result = ADin << BDin[10:6];
+         $display("SLL:Result = %d ADin = %d BDin[10:6] = %d", Result, ADin, BDin[10:6]);
+      end
+      `SRA:  begin
+         Result = ADin >>> BDin[10:6];
+         $display("SRA:Result = %d ADin = %d BDin[10:6] = %d", Result, ADin, BDin[10:6]);
+      end
+      `SRL:  begin
+         Result = ADin >> BDin[10:6];
+         $display("SRL:Result = %d ADin = %d BDin[10:6] = %d", Result, ADin, BDin[10:6]);
+      end
 	   `OR :  Result = ADin | BDin;
 	   `AND:  Result = ADin & BDin;
 	   `XOR:  Result = ADin ^ BDin;

@@ -59,7 +59,7 @@ module SingleCycleProc(CLK, Reset_L, startPC, dmemOut);
    MasterReset rst(CLK, Reset_L,masterReset);
    ProgramCounter pcMod(CLK, masterReset, startPC, PC);
    InstrMem instrMemBlk(PC, instruction);
-   MainControl controlUnit(instruction[31:26], ALUSrcB, RegDst, RegWrite);
+   MainControl controlUnit(instruction[31:26], instruction[5:0], ALUSrcB, RegDst, RegWrite);
    MUX5_2to1 regDstMux(instruction[20:16], instruction[15:11],RegDst, Rw);
    ALUControl aluControlUnit(instruction[31:26], instruction[5:0], ALUOp);
    Register register(CLK, masterReset, Ra, Rb, Rw, ALUOut, RegWrite, busA, busB);

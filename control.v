@@ -1,8 +1,8 @@
 `define OPCODE_R_type  6'b000000
 // `include "SingleCycleProc.v"
 // `include "ALU_behav.v"
-module MainControl (opCode, ALUSrcBWire, RegDstWire, RegWriteWire);
-    input [5:0] opCode;
+module MainControl (opCode, funct, ALUSrcBWire, RegDstWire, RegWriteWire);
+    input [5:0] opCode, funct;
     output ALUSrcBWire, RegDstWire, RegWriteWire;
     reg ALUSrcB, RegWrite, RegDst;
 
@@ -10,10 +10,16 @@ module MainControl (opCode, ALUSrcBWire, RegDstWire, RegWriteWire);
         case (opCode)
             // add, sub, addu, subu, and, or, xor
             `OPCODE_R_type :
-                            begin
-                                ALUSrcB = 0;
-                                RegWrite = 1;
-                                RegDst = 1;
+                            begin // if it's shift, Alu source B must be bit shift amt (bit [10:6])
+                                if (funct == `FUNCT_SLL || funct == `FUNCT_SRA || funct == `FUNCT_SRL) begin
+                                    ALUSrcB = 1;
+                                    RegWrite = 1;
+                                    RegDst = 1;
+                                end else begin
+                                    ALUSrcB = 0;
+                                    RegWrite = 1;
+                                    RegDst = 1;
+                                end
                              end
             // addi
             `OPCODE_ADDI : begin
